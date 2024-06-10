@@ -1,0 +1,131 @@
+/* 전체 페이지 높이 설정 */
+html {
+    height: 100%; /* HTML 요소를 화면 전체 높이로 설정 */
+    margin: 0; /* 기본 마진 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+}
+
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif; /* 기본 폰트 설정 */
+    margin: 0; /* 기본 마진 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    background-color: #f0f0f0; /* 배경색 설정 */
+    display: flex; /* Flexbox 레이아웃 사용 */
+    flex-direction: column; /* 세로 방향 레이아웃 */
+    min-height: 100vh; /* 최소 높이를 화면 전체 높이로 설정 */
+    height: 100%; /* 전체 높이를 100%로 설정 */
+    overflow: hidden; /* 기본 스크롤 숨기기 */
+}
+
+header {
+    background-color: #333; /* 헤더 배경색 설정 */
+    color: white; /* 텍스트 색상 설정 */
+    text-align: center; /* 텍스트를 가운데 정렬 */
+    padding: 10px; /* 내부 여백 설정 */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+}
+
+nav {
+    background-color: #444; /* 내비게이션 배경색 설정 */
+    display: flex; /* Flexbox 레이아웃 사용 */
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    padding: 10px 0; /* 위아래 내부 여백 설정 */
+    position: relative; /* 드롭다운 메뉴를 위한 상대 위치 설정 */
+    font-size: x-large; /* 폰트 크기 설정 */
+}
+
+nav a {
+    color: white; /* 링크 텍스트 색상 설정 */
+    text-decoration: none; /* 텍스트 밑줄 제거 */
+    padding: 10px 20px; /* 내부 여백 설정 */
+    display: flex; /* Flexbox 레이아웃 사용 */
+    align-items: center; /* 수직 가운데 정렬 */
+    height: 100%; /* 링크 높이를 전체 높이로 설정 */
+    transition: background-color 0.3s ease; /* 배경색 변화에 부드러운 전환 적용 */
+}
+
+nav a:hover {
+    background-color: #555; /* 마우스 오버 시 배경색 변화 */
+}
+
+.dropdown {
+    position: relative; /* 드롭다운 메뉴를 위한 상대 위치 설정 */
+    display: inline-block; /* 드롭다운을 인라인 블록으로 설정 */
+}
+
+.dropdown-content {
+    display: none; /* 기본적으로 드롭다운 메뉴 숨기기 */
+    position: absolute; /* 드롭다운 메뉴를 절대 위치로 설정 */
+    background-color: #444; /* 드롭다운 배경색 설정 */
+    min-width: 160px; /* 드롭다운 최소 너비 설정 */
+    z-index: 1; /* 드롭다운이 다른 요소들 위에 보이도록 설정 */
+    left: 0; /* 부모 요소의 왼쪽에 맞춤 */
+    top: 100%; /* 부모 요소의 아래에 맞춤 */
+}
+
+.dropdown-content a {
+    color: white; /* 드롭다운 링크 텍스트 색상 설정 */
+    text-decoration: none; /* 텍스트 밑줄 제거 */
+    padding: 10px 20px; /* 내부 여백 설정 */
+    display: block; /* 블록 레벨 요소로 설정 */
+    text-align: left; /* 텍스트를 왼쪽 정렬 */
+    background-color: white; /* 드롭다운 항목 배경색 설정 */
+}
+
+.dropdown-content a:hover {
+    background-color: #555; /* 드롭다운 항목 마우스 오버 시 배경색 변화 */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* 드롭다운 메뉴를 보이게 설정 */
+}
+
+/* 페이지 콘텐츠 영역 */
+.content {
+    flex: 1; /* 남은 공간을 채우도록 설정 */
+    display: flex; /* Flexbox 레이아웃 사용 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    transition: height 0.3s ease; /* 높이 변화에 부드러운 전환 적용 */
+}
+
+/* iframe 스타일 */
+iframe {
+    width: 100%; /* 너비를 전체로 설정 */
+    height: 80vh; /* 기본 높이를 80vh로 설정 */
+    border: none; /* 테두리 제거 */
+    overflow: auto; /* 내부 스크롤 설정 */
+    transition: height 0.3s ease; /* 높이 변화에 부드러운 전환 적용 */
+}
+
+/* '내 홈페이지'를 위한 스타일 */
+iframe.home-page {
+    height: 50vh; /* '내 홈페이지'의 경우 iframe 높이를 50vh로 설정 */
+    margin: auto 0; /* 세로 방향으로 중앙 정렬 */
+    padding-top: 10px; /* 내부 콘텐츠를 약간 위로 이동 */
+}
+
+/* '홈', '소개', '서비스'의 하위 항목을 위한 스타일 */
+iframe.sub-page, iframe.other-page {
+    height: calc(100vh - 50px); /* 하위 항목 페이지의 경우 iframe 높이를 100vh - 푸터 높이로 설정 */
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #333; /* 푸터 배경색 설정 */
+    color: white; /* 푸터 텍스트 색상 설정 */
+    text-align: center; /* 푸터 텍스트 가운데 정렬 */
+    padding: 10px 0; /* 위아래 내부 여백 설정 */
+    position: fixed; /* 푸터를 고정 위치로 설정 */
+    bottom: 0; /* 화면 하단에 맞춤 */
+    width: 100%; /* 너비를 전체로 설정 */
+    transition: opacity 0.3s ease; /* 가시성 변화에 부드러운 전환 적용 */
+}
+
+/* 푸터 숨기기 */
+footer.hidden {
+    opacity: 0; /* 푸터의 투명도 설정 */
+    visibility: hidden; /* 푸터를 숨기기 위한 클래스 */
+}
