@@ -1,0 +1,105 @@
+/* 모든 요소에 박스 사이징 설정 */
+* {
+  box-sizing: border-box;
+}
+
+/* 기본 바디 스타일 설정 */
+body {
+  text-align: center;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CSS 변수 설정 */
+:root {
+  --base-delay: 0.5;
+  --reveal-speed: 0.5;
+  --stagger: 0.1;
+}
+
+/* 블록 리빌 컨테이너 설정 */
+.block-reveal {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+/* 블록 리빌 스팬 설정 */
+.block-reveal span {
+  -webkit-animation: show-text calc(var(--reveal-speed, 0.5) * 1s) calc(var(--delay) * 1s) steps(1) both;
+          animation: show-text calc(var(--reveal-speed, 0.5) * 1s) calc(var(--delay) * 1s) steps(1) both;
+  font-size: 14rem; /* 글자 크기 */
+  font-weight: bold;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Arial', sans-serif; /* 폰트 설정 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+/* 블록 리빌 효과 설정 */
+.block-reveal span:after {
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--color, #1e90ff);
+  position: absolute;
+  -webkit-animation: block-reveal calc(var(--reveal-speed, 0.5) * 1s) calc(var(--delay) * 1s) both;
+          animation: block-reveal calc(var(--reveal-speed, 0.5) * 1s) calc(var(--delay) * 1s) both;
+}
+
+/* 블록 리빌 애니메이션 키프레임 */
+@-webkit-keyframes block-reveal {
+  0% {
+    -webkit-transform: translate(-110%, 0);
+            transform: translate(-110%, 0);
+  }
+  45%, 55% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(110%, 0);
+            transform: translate(110%, 0);
+  }
+}
+
+@keyframes block-reveal {
+  0% {
+    -webkit-transform: translate(-110%, 0);
+            transform: translate(-110%, 0);
+  }
+  45%, 55% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(110%, 0);
+            transform: translate(110%, 0);
+  }
+}
+
+/* 텍스트 표시 애니메이션 키프레임 */
+@-webkit-keyframes show-text {
+  0% {
+    color: transparent;
+    text-align: center;
+  }
+  50%, 100% {
+    color: #000;
+    text-align: center;
+  }
+}
+
+@keyframes show-text {
+  0% {
+    color: transparent;
+    text-align: center;
+  }
+  50%, 100% {
+    color: white;
+  }
+}

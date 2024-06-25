@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 홈페이지</title>
+    <!-- CSS 파일 링크 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 네비게이션 메뉴 -->
+    <nav>
+        <!-- '홈' 버튼 클릭 시 home_effect.html을 로드 -->
+        <a href="#" onclick="loadIframeContent('home', 'home_effect/home_effect.html'); return false;">홈</a>
+        <!-- '종류' 버튼 클릭 시 type.html을 로드 -->
+        <a href="#" onclick="loadIframeContent('type', 'type/type.html'); return false;">종류</a>
+        <!-- '학생정보시스템' 버튼 클릭 시 새로운 탭에서 링크 열기 -->
+        <a href="https://p.kopo.ac.kr/login.jsp" target="_blank">학생정보시스템</a>
+        <!-- 'About Me' 버튼 클릭 시 aboutme.html을 로드 -->
+        <a href="#" onclick="loadIframeContent('about', 'aboutme/aboutme.html'); return false;">About Me</a>
+    </nav>
+    <!-- 콘텐츠 영역 -->
+    <div class="content">
+        <!-- iframe을 사용하여 페이지 내용을 동적으로 로드 -->
+        <iframe name="content-frame" src="home_effect/home_effect.html"></iframe>
+    </div>
+    <!-- 스크립트 파일 링크 -->
+    <script src="script.js"></script>
+</body>
+</html>

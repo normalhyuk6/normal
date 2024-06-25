@@ -1,0 +1,37 @@
+/* 추가: 모든 텍스트 요소에 흰색 적용 */
+* {
+    color: white; /* 기본 글자색을 흰색으로 설정 */
+    font-size: 18px; /* 기본 글자 크기 설정 */
+}
+
+body {
+    font-family: Arial, sans-serif; /* 폰트 설정 */
+    padding: 50px 40px 20px 400px; /* 위쪽 50px, 오른쪽 40px, 아래쪽 20px, 왼쪽 400px 여백 설정 */
+    color: white; /* 글자색을 흰색으로 설정 */
+}
+
+/* 섹션 마진 설정 */
+.section {
+    margin-bottom: 50px;
+}
+
+/* 섹션 제목 스타일 설정 */
+.section h2 {
+    margin-bottom: 30px;
+    font-size: 50px; /* 섹션 제목 글자 크기 설정 */
+}
+
+/* 링크 컨테이너 스타일 설정 */
+.links {
+    display: flex;
+    justify-content: flex-start; /* 링크들을 왼쪽 정렬로 변경 */
+}
+
+/* 링크 스타일 설정 */
+.links a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: white; /* 링크 글자색을 흰색으로 설정 */
+    margin: 0 150px; /* 하이퍼링크 간격 설정 */
+    padding: 0; /* 패딩을 없앰 */
+    font-size: 18px; /* 링크 글자 크기 설정 */
+}
